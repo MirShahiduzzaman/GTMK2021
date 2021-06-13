@@ -21,10 +21,19 @@ public class Screen : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0))
+        Debug.Log(enabled);
+        if (!enabled)
         {
-            SceneManager.LoadScene(1);
-            Debug.Log("Clicked on screen");
+            Debug.Log("Disabled");
+            return;
+        }
+        else
+        {
+            if(Input.GetMouseButtonDown(0))
+            {
+                SceneManager.LoadScene(1);
+                Debug.Log("Clicked on screen");
+            }
         }
     }
 }
