@@ -7,7 +7,7 @@ public class percent_Update : MonoBehaviour
 {   
     public Text changeto;
     public GameObject change;
-    public float FE_percent = 90f;
+    public float FE_percent = 100f;
     public PickUpController o;
 
     // Start is called before the first frame update
@@ -29,7 +29,7 @@ public class percent_Update : MonoBehaviour
     {
         if(o.equipped)
         {
-            changeto.text = "Fire Extinguisher : ";
+            FE_percent -= 10;
             change.GetComponent<Text>().text = "Fire Extinguisher : " + FE_percent.ToString();
         }
     }
