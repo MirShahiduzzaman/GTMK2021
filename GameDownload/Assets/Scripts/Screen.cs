@@ -15,8 +15,12 @@ public class Screen : MonoBehaviour
     }
 
     private void Update()
-    {
-        
+    {  
+        //Load a scene by the name "SceneName" if you press the W key.
+        if(Input.GetKeyDown(KeyCode.W))
+        {
+            Application.LoadLevel(0);
+        }        
     }
 
     private void OnMouseOver()
