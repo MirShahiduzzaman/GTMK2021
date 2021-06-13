@@ -7,8 +7,13 @@ public class percent_Update : MonoBehaviour
 {   
     public Text changeto;
     public GameObject change;
-    private float FE_percent = 100f;
+    private float FE_percent = 1000f;
     public PickUpController o;
+
+    void Start()
+    {
+        change.GetComponent<Text>().text = "Fire Extinguisher : " + FE_percent.ToString();
+    }
 
     // Update is called once per frame
     void Update()
