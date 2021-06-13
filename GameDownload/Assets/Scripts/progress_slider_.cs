@@ -33,4 +33,16 @@ public class progress_slider_ : MonoBehaviour
     {
         targetProgress = slider.value + newProgress;
     }
+
+    public void decrementValue(float amt)
+    {
+        if(slider.value - amt > 0)
+        {
+            slider.value -= amt;
+        }
+        else
+        {
+            slider.value = 0;
+        }
+    }
 }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
+    public progress_slider_ fire;
     public float damage = 10f;
-    public float range = 100f;
 
     public Camera fpsCam;
     // Update is called once per frame
@@ -23,6 +23,13 @@ public class Shooting : MonoBehaviour
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit))
         {
             Debug.Log(hit.transform.name);
+
+            Target target = hit.transform.GetComponent<Target>();
+
+            if(target != null)
+            {
+                fire.decrementValue(damage*0.01f);
+            }
         }
     }
 }
