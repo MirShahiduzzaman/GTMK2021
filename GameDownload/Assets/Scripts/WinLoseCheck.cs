@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WinLoseCheck : MonoBehaviour
 {
@@ -9,27 +10,17 @@ public class WinLoseCheck : MonoBehaviour
     public PickUpController o;
     private string result = "";
     public progress_slider_ temp;
-    public progress_slider_ bugs;
     public progress_slider_ goal;
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
-        {
-            changeText();
-        }
+        check();
     }
 
-    void changeText()
+    void check()
     {
-        depends.GetComponent<Text>().text = "You " + result + "!";
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(temp.slider.value == 1 || bugs.slider.value == 1)
+        if(temp.slider.value == 1)
         {
             Time.timeScale = 0;
             Debug.Log("You lost... Try again? (Restart the app)");
@@ -39,5 +30,6 @@ public class WinLoseCheck : MonoBehaviour
             Time.timeScale = 0;
             Debug.Log("You Won! Congrats!!");
         }
+        depends.GetComponent<Text>().text = result;
     }
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 public class PickUpController : MonoBehaviour
 {
     public Pickupable o;
-    public Screen s;
     public Rigidbody rb;
     public BoxCollider coll;
     public Transform player, objectContainer, fpsCam;
@@ -28,14 +27,12 @@ public class PickUpController : MonoBehaviour
         if(!equipped)
         {
             o.enabled = false;
-            s.enabled = true;
             rb.isKinematic = false;
             coll.isTrigger = false;
         }
         else
         {
             o.enabled = true;
-            s.enabled = false;
             rb.isKinematic = true;
             coll.isTrigger = true;
             slotFull = true;
@@ -93,7 +90,6 @@ public class PickUpController : MonoBehaviour
 
         // Enable script
         o.enabled = true;
-        s.enabled = false;
     }
 
     private void Drop()
@@ -110,6 +106,5 @@ public class PickUpController : MonoBehaviour
 
         // Enable script
         o.enabled = false;
-        s.enabled = true;
     }
 }

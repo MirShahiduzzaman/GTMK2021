@@ -10,12 +10,6 @@ public class percent_Update : MonoBehaviour
     private float FE_percent = 100f;
     public PickUpController o;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
