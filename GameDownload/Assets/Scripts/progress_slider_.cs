@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class progress_slider_ : MonoBehaviour
 {
-    private Slider slider;
+    public Slider slider;
     private float targetProgress = 0;
     public float fillspeed = 0.1f;
 

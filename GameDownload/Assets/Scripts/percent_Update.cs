@@ -7,7 +7,7 @@ public class percent_Update : MonoBehaviour
 {   
     public Text changeto;
     public GameObject change;
-    public float FE_percent = 100f;
+    private float FE_percent = 100f;
     public PickUpController o;
 
     // Start is called before the first frame update

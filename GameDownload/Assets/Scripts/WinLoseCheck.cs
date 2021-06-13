@@ -4,19 +4,40 @@ using UnityEngine;
 
 public class WinLoseCheck : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Text winLose;
+    public GameObject depends;
+    public PickUpController o;
+    private string result = "";
+    public progress_slider_ temp;
+    public progress_slider_ bugs;
+    public progress_slider_ goal;
+
+    // Update is called once per frame
+    void Update()
     {
-        
+        if(Input.GetButtonDown("Fire1"))
+        {
+            changeText();
+        }
+    }
+
+    void changeText()
+    {
+        depends.GetComponent<Text>().text = "You " + result + "!";
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P))
+        if(temp.slider.value == 1 || bugs.slider.value == 1)
         {
             Time.timeScale = 0;
-            Debug.Log("Game Paused");
+            Debug.Log("You lost... Try again? (Restart the app)");
+        }
+        else if(goal.slider.value == 1)
+        {
+            Time.timeScale = 0;
+            Debug.Log("You Won! Congrats!!");
         }
     }
 }
