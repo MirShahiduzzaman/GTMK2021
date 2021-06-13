@@ -12442,6 +12442,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Screen
       objectReference: {fileID: 0}
+    - target: {fileID: 7483339984023118042, guid: b9479eb4f5fff1348ae96cdcb6e27e37,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3fb96ad3e7374c54a8062234ac196548, type: 2}
     - target: {fileID: 7483339984023118044, guid: b9479eb4f5fff1348ae96cdcb6e27e37,
         type: 3}
       propertyPath: m_RootOrder

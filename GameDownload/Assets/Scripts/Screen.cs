@@ -14,7 +14,10 @@ public class Screen : MonoBehaviour
         
     }
 
-    
+    private void Update()
+    {
+        
+    }
 
     private void OnMouseOver()
     {
