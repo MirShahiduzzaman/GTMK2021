@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
+    public PickUpController o;
     public progress_slider_ fire;
     public float damage = 10f;
 
@@ -19,16 +20,19 @@ public class Shooting : MonoBehaviour
 
     void Shoot()
     {
-        RaycastHit hit;
-        if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit))
+        if(o.equipped)
         {
-            Debug.Log(hit.transform.name);
-
-            Target target = hit.transform.GetComponent<Target>();
-
-            if(target != null)
+            RaycastHit hit;
+            if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit))
             {
-                fire.decrementValue(damage*0.01f);
+                Debug.Log(hit.transform.name);
+
+                Target target = hit.transform.GetComponent<Target>();
+
+                if(target != null)
+                {
+                    fire.decrementValue(damage*0.01f);
+                }
             }
         }
     }
